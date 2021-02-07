@@ -1,3 +1,8 @@
+/* 
+Armazenar pseudochaves
+ */
+
+
 
 #ifndef BALDE_H
 #define BALDE_H 1
@@ -7,6 +12,9 @@
 using namespace std;
 
 class Balde {
+
+    private:
+    string pchaves;
 
 };
 
