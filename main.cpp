@@ -1,0 +1,3 @@
+/* 
+Solicitar o tamanho de M a ser usado para os baldes e o numero de bits B a ser usado para pseudochaves
+*/
