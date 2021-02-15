@@ -21,8 +21,6 @@ Diretorio::~Diretorio()
 
 bool Diretorio::inserir(string pchave)
 {
-    // prof global > prof balde -> dividir balde
-    // == duplicar diretorio 
     string posMapa = pchave.substr(0, profDir);
     if(mapaDir->find(posMapa)->second->buscar(pchave))
     {
@@ -72,7 +70,6 @@ void Diretorio::dividirBalde(string chav)
     int final = baldeAux1->getProfundidade() + 1;
     baldeAux1->setProfundidade(final); // ajusta profundidade local
     baldeAux2->setProfundidade(final);
-    // mapaDir->insert(pair<string, Balde*>("0", baldeAux2)); // ajustando ponteiros
     aux1 = chav.substr(0, final);
     aux2 = chav.substr(0, final - 1);
     if(*aux1.end()=='0') // vendo se o final termina com 0
@@ -85,7 +82,6 @@ void Diretorio::dividirBalde(string chav)
     }
     for (auto local_it = mapaDir->begin(); local_it!= mapaDir->end(); ++local_it ) // percorrer todo mapa e verificar chaves 
     {
-      // std::cout << " " << local_it->first << ":" << local_it->second;
       if(local_it->first.substr(0, final) == aux2)
       {
           local_it->second=baldeAux2;
@@ -131,9 +127,8 @@ void Diretorio::imprimeDiretorio()
         }
     }
 
-    // for(auto ptr = vetAux.begin(); ptr < vetAux.end(); ptr++)
     cout << "Fator de carga: " << (float) cont / (vetAux.size() * tamBalde) * 100 << endl;
-    // cout << "Fator de carga: " << cont << " " << vetAux.size() << " " << tamBalde << endl;
+
     cout << endl;
     cout << endl;
 }

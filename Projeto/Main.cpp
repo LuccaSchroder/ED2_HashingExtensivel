@@ -34,12 +34,14 @@ int main(int argc, char *argv[])
     // diretorio->imprimeDiretorio();
     // diretorio->inserir("1110");
     // diretorio->imprimeDiretorio();
+    cout << "Formato Aleatorio: " << endl;
     if(chavesAleatorias(diretorio, b, c))
     {
         diretorio->imprimeDiretorio();   
     }
     delete diretorio;
     diretorio = new Diretorio(m, b);
+    cout << "Formato Padrao: " << endl;
     if(chavesAleatoriasPadronizada(diretorio, b, c, p))
     {
         diretorio->imprimeDiretorio();
